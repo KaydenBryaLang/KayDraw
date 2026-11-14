@@ -6,20 +6,26 @@ Grid::Grid(int width, int height)
 m_height = height;
 m_width = width;
 m_grid.resize(height*width);
-
+/*
+for (int i = 1; i <= ((height-1)*width+(width-1)*height); ++i) 
+{
+        m_walls.emplace_hint(m_walls.end(), i);
+}
+*/
 for(int i = 0; i<height; i++)
 for(int j = 0; j<width; j++)
 {
-{
+{	
+	//m_grid[index(j,i)].setGroup(index(j,i));
 	if(indexValid(j+1,i))
 	{
 		//getGate(j-1,i).m_up =  getGate(j-1,i).m_up;
-		m_grid[index(j+1,i)].m_left = m_grid[index(j,i)].m_right;
+		m_grid[index(j+1,i)].setLeft(m_grid[index(j,i)].getRight());
 	}
 	if(indexValid(j,i-1))
 	{
 		//getGate(j,i).m_right = getGate(j,i).m_right;
-		m_grid[index(j,i-1)].m_down = m_grid[index(j,i)].m_up;
+		m_grid[index(j,i-1)].setDown(m_grid[index(j,i)].getUp());
 	}
 }
 }
@@ -100,4 +106,10 @@ return m_grid[m_width*y+x];
 int Grid::index( const int x, const int y) const
 {
 return m_width*y+x;
+}
+
+
+void Grid::createRandMaze()
+{
+
 }

@@ -6,6 +6,7 @@ m_up = new bool(false);
 m_down = new bool(false);
 m_right = new bool(false);
 m_left = new bool(false);
+m_group = new int(0);
 //m_group = new std::unique_ptr<std::set<int>()>;
 }
 
@@ -73,10 +74,7 @@ return;
 void Gate::setLeft(bool *con)
 {
 //delete m_left;
-	std::cout << con << std::endl;
 m_left = con;
-
-	std::cout << m_left << std::endl;
 return;
 }
 void Gate::openUp(bool con)
@@ -99,6 +97,35 @@ void Gate::openLeft(bool con)
 *m_left = con;
 return;
 }
+
+
+
+
+int* Gate::getGroupPtr()
+{
+return m_group;
+}
+
+
+int Gate::getGroup()
+{
+return *m_group;
+}
+
+
+void Gate::setGroupPtr(int *group)
+{
+m_group = group;
+}
+
+
+void Gate::setGroup(int group)
+{
+*m_group = group;
+}
+
+
+
 
 //Start of fun functions
 /*

@@ -10,6 +10,7 @@ Grid grid(size,size);
 
 /*
 grid.printGrid();
+
 grid.getGrid()[grid.index(0,0)].openRight(true);
 grid.getGrid()[grid.index(0,0)].openUp(true);
 grid.getGrid()[grid.index(0,0)].openDown(true);
