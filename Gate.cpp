@@ -1,27 +1,12 @@
 #include "Gate.h"
 #include <iostream>
-Gate::Gate()//: m_group(std::make_unique<std::set<int>>())//: m_up(falso),m_down(falso),m_right(falso),m_left(falso)
+Gate::Gate()
 {
 m_up = new bool(false);
 m_down = new bool(false);
 m_right = new bool(false);
 m_left = new bool(false);
-m_group = 0;
-//m_group = new std::unique_ptr<std::set<int>()>;
 }
-
-
-
-/*
-Gate::Gate(int num)//: m_up(falso),m_down(falso),m_right(falso),m_left(falso)
-{
-m_up = new bool(false);
-m_down = new bool(false);
-m_right = new bool(false);
-m_left = new bool(false);
-m_group = new std::set<int>({num});
-}
-*/
 
 
 Gate::~Gate()
@@ -92,65 +77,6 @@ void Gate::openLeft(bool con)
 *m_left = con;
 return;
 }
-
-
-
-/*
-int* Gate::getGroupPtr()
-{
-return m_group;
-valence += 1;
-}
-*/
-
-int Gate::getGroup()
-{
-return m_group;
-}
-
-/*
-void Gate::setGroupPtr(int *group)
-{
-m_group = group;
-valence += 1;
-}
-*/
-
-void Gate::setGroup(int group)
-{
-m_group = group;
-}
-
-
-
-
-//Start of fun functions
-/*
-std::unique_ptr<std::set<int>>& Gate::getGroup()
-{
-return m_group;
-}
-
-void Gate::setGroup(std::unique_ptr<std::set<int>>& group)
-{
-m_group.reset(group);
-return;
-}
-
-void Gate::addInd(const int ind)
-{
-m_group->insert(ind);
-return;
-}
-
-//void Gate::operator+=(Gate& rhs)
-void Gate::operator+=(Gate& rhs)
-{
-m_group->insert(rhs.getGroup()->begin(),rhs.getGroup()->end());
-return;
-}
-*/
-// end of fun functions
 
 
 void Gate::textile(std::string &text)
