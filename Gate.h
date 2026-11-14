@@ -6,12 +6,10 @@
 class Gate
 {
 protected:
-//public:
 bool *m_up;
 bool *m_down;
 bool *m_right;
 bool *m_left;
-int m_group;
 
 public:
 Gate();
