@@ -8,9 +8,11 @@ all: grid_image
 
 
 %.o: %.cpp
-	g++ -g -Wall -std=c++17 -Wpedantic -Wextra -Werror -c $<
+	g++ -g -fstack-protector-strong -Wall -std=c++17 -Wpedantic -Wextra -Werror -c $<
 
 grid_image: grid_image.o $(ALL_THE_OS) $(THE_DOT_HS)
 	g++ -o grid_image grid_image.o $(ALL_THE_OS)
 
- 
+clean:
+	rm *.o grid_image
+

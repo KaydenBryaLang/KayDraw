@@ -11,7 +11,7 @@ protected:
 std::vector<Gate> m_grid;
 int m_width;
 int m_height;
-//std::set<int> m_walls;
+std::set<int> m_walls;
 
 
 public:

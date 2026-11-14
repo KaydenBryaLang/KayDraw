@@ -26,12 +26,7 @@ m_group = new std::set<int>({num});
 
 Gate::~Gate()
 {
-/*
-if(m_up!=0){delete m_up;}
-if(m_down!=0){delete m_down;}
-if(m_right!=0){delete m_right;}
-if(m_left!=0){delete m_left;}
-*/
+
 }
 
 
@@ -54,26 +49,26 @@ return m_left;
 
 void Gate::setUp(bool *con)
 {
-//delete m_up;
+delete m_up;
 m_up = con;
 return;
 }
 void Gate::setDown(bool *con)
 {
-//delete m_down;
+delete m_down;
 
 m_down = con;
 return;
 }
 void Gate::setRight(bool *con)
 {
-//delete m_right;
+delete m_right;
 m_right = con;
 return;
 }
 void Gate::setLeft(bool *con)
 {
-//delete m_left;
+delete m_left;
 m_left = con;
 return;
 }
@@ -104,6 +99,7 @@ return;
 int* Gate::getGroupPtr()
 {
 return m_group;
+valence += 1;
 }
 
 
@@ -116,6 +112,7 @@ return *m_group;
 void Gate::setGroupPtr(int *group)
 {
 m_group = group;
+valence += 1;
 }
 
 

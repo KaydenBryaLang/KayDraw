@@ -7,10 +7,10 @@ std::cout << "What size?";
 std::cin >> size;
 Grid grid(size,size);
 
+grid.createRandMaze();
 
-/*
 grid.printGrid();
-
+/*
 grid.getGrid()[grid.index(0,0)].openRight(true);
 grid.getGrid()[grid.index(0,0)].openUp(true);
 grid.getGrid()[grid.index(0,0)].openDown(true);
@@ -56,8 +56,6 @@ if(grid.getGate(0,0).getRight()!=grid.getGate(0,0).getUp())
 */
 
 
-std::cout << std::endl;
-grid.printGrid();
 return 0;
 }
 

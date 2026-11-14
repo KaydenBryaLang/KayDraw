@@ -13,9 +13,12 @@ bool *m_right;
 bool *m_left;
 int *m_group;
 
+public:
+int valence;
+
 //std::unique_ptr<std::set<int>> m_group;
 
-public:
+//public:
 Gate();
 /*
 Gate(int num);
