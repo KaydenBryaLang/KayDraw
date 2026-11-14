@@ -11,11 +11,10 @@ bool *m_up;
 bool *m_down;
 bool *m_right;
 bool *m_left;
-int *m_group;
+int m_group;
 
 public:
 int valence;
-
 //std::unique_ptr<std::set<int>> m_group;
 
 //public:
@@ -32,9 +31,9 @@ bool* getDown();
 bool* getRight();
 bool* getLeft();
 
-int* getGroupPtr();
+//int* getGroupPtr();
 int getGroup();
-void setGroupPtr(int *group);
+//void setGroupPtr(int *group);
 void setGroup(int group);
 
 void setUp(bool *con);

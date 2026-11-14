@@ -6,7 +6,7 @@ m_up = new bool(false);
 m_down = new bool(false);
 m_right = new bool(false);
 m_left = new bool(false);
-m_group = new int(0);
+m_group = 0;
 //m_group = new std::unique_ptr<std::set<int>()>;
 }
 
@@ -95,30 +95,30 @@ return;
 
 
 
-
+/*
 int* Gate::getGroupPtr()
 {
 return m_group;
 valence += 1;
 }
-
+*/
 
 int Gate::getGroup()
 {
-return *m_group;
+return m_group;
 }
 
-
+/*
 void Gate::setGroupPtr(int *group)
 {
 m_group = group;
 valence += 1;
 }
-
+*/
 
 void Gate::setGroup(int group)
 {
-*m_group = group;
+m_group = group;
 }
 
 

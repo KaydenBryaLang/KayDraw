@@ -3,6 +3,7 @@
 #include <memory>
 #include <cmath>
 #include <iostream>
+#include <ctime>
 Grid::Grid(int width, int height)
 {
 m_height = height;
@@ -75,7 +76,6 @@ std::cout << std::endl;
 maze = "";
 }
 }
-return;
 }
 
 int Grid::getHeight()
@@ -138,11 +138,14 @@ if(*it<=(m_height-1)*m_width)
 	m_grid[ind1].openDown(true);
 	if(m_grid[ind1].valence > m_grid[ind2].valence)
 	{
-	m_grid[ind2].setGroup(m_grid[ind1].getGroup());
+	
+	//m_grid[ind2].setGroupPtr(m_grid[ind1].getGroupPtr());
+	makeExtinct(m_grid[ind2].getGroup(),m_grid[ind2].getGroup());
 	}
 	else
 	{
-	m_grid[ind1].setGroup(m_grid[ind2].getGroup());
+	//m_grid[ind1].setGroupPtr(m_grid[ind2].getGroupPtr());
+	makeExtinct(m_grid[ind1].getGroup(),m_grid[ind2].getGroup());
 	}
 	}
 }
@@ -161,12 +164,13 @@ else
 
 	if(m_grid[ind1].valence > m_grid[ind2].valence)
 	{ 
-	m_grid[ind2].setGroupPtr(m_grid[ind1].getGroupPtr());
+	//m_grid[ind2].setGroupPtr(m_grid[ind1].getGroupPtr());
+	makeExtinct(m_grid[ind2].getGroup(),m_grid[ind1].getGroup());
 
 	}
 	else
 	{
-	m_grid[ind1].setGroupPtr(m_grid[ind2].getGroupPtr());
+	makeExtinct(m_grid[ind1].getGroup(),m_grid[ind2].getGroup());
 	}
 
 	}
@@ -176,5 +180,20 @@ m_walls.erase(*it);
 
 
 
+}
+}
+
+
+void Grid::makeExtinct(int victim, int nuke)
+{
+for(int i = 0; i<m_height; i++)
+{
+for(int j = 0; j<m_width; j++)
+{
+if(m_grid[index(j,i)].getGroup() == victim)
+{
+m_grid[index(j,i)].setGroup(nuke);
+}
+}
 }
 }

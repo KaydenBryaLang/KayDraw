@@ -10,6 +10,7 @@ Grid grid(size,size);
 grid.createRandMaze();
 
 grid.printGrid();
+return 0;
 /*
 grid.getGrid()[grid.index(0,0)].openRight(true);
 grid.getGrid()[grid.index(0,0)].openUp(true);

@@ -24,5 +24,6 @@ std::vector<Gate>& getGrid();
 int index( const int x, const int y) const;
 bool indexValid( const int x, const int y) const;
 void createRandMaze();
+void makeExtinct(int victim, int nuke);
 };
 
