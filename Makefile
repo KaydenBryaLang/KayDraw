@@ -1,10 +1,10 @@
 
-ALL_THE_OS = Grid.o
+ALL_THE_OS = Grid.o Gate.o
 
-THE_DOT_HS = Grid.h
+THE_DOT_HS = Grid.h Gate.h
 
 
-all: Grid
+all: grid_image
 
 
 %.o: %.cpp
