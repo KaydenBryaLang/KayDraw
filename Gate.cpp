@@ -9,11 +9,6 @@ m_left = new bool(false);
 }
 
 
-Gate::~Gate()
-{
-
-}
-
 
 bool* Gate::getUp()
 {

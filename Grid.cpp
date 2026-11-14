@@ -24,6 +24,7 @@ for(int j = 0; j<width; j++)
 	}
 }
 }
+return;
 }
 
 
@@ -36,38 +37,41 @@ return m_grid;
 
 void Grid::printGrid()
 {
+
 std::string maze= "";
+
 for(int i = 0; i<=m_height; i++)
 {
 for(int n = 0; n<2;n++)
 {
 for(int j = 0; j<m_width; j++)
 {
+	
+	if(i==m_height && n==1){break;}
 
-
-if(i==m_height && n==1){break;}
-if(n==0 && i==m_height)
-{
-getGate(j,i-1).textileDown(maze);
-}
-else if(n==0)
-{
-getGate(j,i).textileUp(maze);
-}
-else
-{
-getGate(j,i).textile(maze);
-}
+	if(n==0 && i==m_height)
+	{
+	getGate(j,i-1).textileDown(maze);
+	}
+	else if(n==0)
+	{
+	getGate(j,i).textileUp(maze);
+	}
+	else
+	{
+	getGate(j,i).textile(maze);
+	}
 
 }
-std::cout << maze;
-if(!(n==0 && i==m_height))
-{;
-std::cout << std::endl;
+	std::cout << maze;
+	if(!(n==0 && i==m_height))
+	{
+	std::cout << std::endl;
+	}
+	maze = "";
 }
-maze = "";
 }
-}
+return;
 }
 
 
