@@ -8,7 +8,15 @@ m_right = new bool(false);
 m_left = new bool(false);
 }
 
-
+Gate::~Gate()
+{
+/*
+delete m_up;
+delete m_down;
+delete m_right;
+delete m_left;
+*/
+}
 
 bool* Gate::getUp()
 {

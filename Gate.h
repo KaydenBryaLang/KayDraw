@@ -14,6 +14,7 @@ bool *m_left;
 
 public:
 Gate(); // Initializes all pointers to false
+~Gate();
 bool* getUp(); //The getters. gives the pointers
 bool* getDown();
 bool* getRight();
